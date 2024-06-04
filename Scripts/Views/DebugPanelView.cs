@@ -15,6 +15,7 @@ public partial class DebugPanelView : Control
     [Export] public PackedScene? DynamicInfoDebugActionWidget;
     [Export] public PackedScene? ButtonDebugActionWidget;
     [Export] public PackedScene? ToggleDebugActionWidget;
+    [Export] public PackedScene? StringDebugActionWidget;
     [Export] public PackedScene? IntDebugActionWidget;
     [Export] public PackedScene? FloatDebugActionWidget;
     [Export] public PackedScene? EnumDebugActionWidget;

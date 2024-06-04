@@ -125,6 +125,7 @@ public sealed class ExampleOptionsObject
     public bool ToggleExample { get; set; }
     public string DynamicInfoExample { get; set; } = "Dynamic Info";
     public string InfoExample => "Info";
+    public string StringExample { get; set; }
     public int IntExample { get; set; }
     public float FloatExample { get; set; }
     public ExampleEnum EnumExample { get; set; }
@@ -161,6 +162,11 @@ This is the most part of this assets, the debug options (or widgets). Once you h
     ```csharp
     bool someBool = false;
     section.AddToggle("Toggle name", val => someBool = val, () => someBool);
+    ```
+- String: a string selector with a name. Requests a setter and a getter for the value.
+    ```csharp
+    string someString = "String value";
+    section.AddString("String name", val => someString = val, () => someString);
     ```
 - Int: an int selector with a name. Requests a setter and a getter for the value.
     ```csharp

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dast33no0qax8" path="res://addons/GDebugPanelGodot/Scenes/ButtonDebugActionWidget.tscn" id="3_r5431"]
 [ext_resource type="PackedScene" uid="uid://hy0wr7qtm7vx" path="res://addons/GDebugPanelGodot/Scenes/GDebugPanelSection.tscn" id="3_rmsxo"]
 [ext_resource type="PackedScene" uid="uid://ct2p5jkatd6p4" path="res://addons/GDebugPanelGodot/Scenes/ToggleDebugActionWidget.tscn" id="4_lwilv"]
+[ext_resource type="PackedScene" uid="uid://jjcvncm5s1yq" path="res://addons/GDebugPanelGodot/Scenes/StringDebugActionWidget.tscn" id="7_8lp1x"]
 [ext_resource type="PackedScene" uid="uid://b2wgwoerjooqf" path="res://addons/GDebugPanelGodot/Scenes/IntDebugActionWidget.tscn" id="7_vbj6r"]
 [ext_resource type="PackedScene" uid="uid://chrq3yyve2gwu" path="res://addons/GDebugPanelGodot/Scenes/FloatDebugActionWidget.tscn" id="8_ubasg"]
 [ext_resource type="PackedScene" uid="uid://bvqepn62gdah" path="res://addons/GDebugPanelGodot/Scenes/EnumDebugActionWidget.tscn" id="9_cehxr"]
@@ -41,6 +42,7 @@ InfoDebugActionWidget = ExtResource("3_es4am")
 DynamicInfoDebugActionWidget = ExtResource("3_c1kvk")
 ButtonDebugActionWidget = ExtResource("3_r5431")
 ToggleDebugActionWidget = ExtResource("4_lwilv")
+StringDebugActionWidget = ExtResource("7_8lp1x")
 IntDebugActionWidget = ExtResource("7_vbj6r")
 FloatDebugActionWidget = ExtResource("8_ubasg")
 EnumDebugActionWidget = ExtResource("9_cehxr")

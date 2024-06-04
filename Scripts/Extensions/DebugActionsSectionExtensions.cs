@@ -66,6 +66,22 @@ public static class DebugActionsSectionExtensions
     }
     
     /// <summary>
+    /// Adds a string debug action with the provided name, and actions
+    /// for setting and getting the string value.
+    /// </summary>
+    /// <param name="section">The debug actions section to add the string action to.</param>
+    /// <param name="name">The name of the string.</param>
+    /// <param name="setAction">The action to set the string value.</param>
+    /// <param name="getAction">The function to get the current string value.</param>
+    /// <returns>The added string debug action.</returns>
+    public static IDebugAction AddString(this IDebugActionsSection section, string name, Action<string> setAction, Func<string> getAction)
+    {
+        IDebugAction debugAction = new StringDebugAction(name, setAction, getAction);
+        section.Add(debugAction);
+        return debugAction;
+    }
+    
+    /// <summary>
     /// Adds an integer debug action with the provided name, step, and actions
     /// for setting and getting the integer value.
     /// </summary>
