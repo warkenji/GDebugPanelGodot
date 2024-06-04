@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using GDebugPanelGodot.DebugActions.Containers;
 using GDebugPanelGodot.Extensions;
+using Godot;
 
 namespace GDebugPanelGodot.UseCases;
 
@@ -12,8 +13,9 @@ public static class CreateDebugActionForPropertyInfoUseCase
         MethodInfo? getter = propertyInfo.GetGetMethod();
         MethodInfo? setter = propertyInfo.GetSetMethod();
 
+        bool hasSetter = setter != null;
         bool hasPublicGetter = getter != null && getter.IsPublic;
-        bool hasPublicSetter = setter != null && setter.IsPublic;
+        bool hasPublicSetter = hasSetter && setter.IsPublic;
         bool hasPublicGetterAndSetter = hasPublicGetter && hasPublicSetter;
 
         if (hasPublicGetterAndSetter)
@@ -26,9 +28,19 @@ public static class CreateDebugActionForPropertyInfoUseCase
                     () => (bool)propertyInfo.GetValue(optionsObject)!
                 );
             }
+            else if(propertyInfo.PropertyType == typeof(Color))
+            {
+                section.AddColor(
+                    propertyInfo.Name,
+                    val => propertyInfo.SetValue(optionsObject, val),
+                    () => (Color)propertyInfo.GetValue(optionsObject)!
+                );
+            }
             else if(propertyInfo.PropertyType == typeof(string))
             {
-                section.AddInfoDynamic(
+                section.AddString(
+                    propertyInfo.Name,
+                    val => propertyInfo.SetValue(optionsObject, val),
                     () => (string)propertyInfo.GetValue(optionsObject)!
                 );
             }
@@ -57,19 +69,21 @@ public static class CreateDebugActionForPropertyInfoUseCase
                     () => propertyInfo.GetValue(optionsObject)!
                 );
             }
-            
-            return;
         }
-
-        if (hasPublicGetter)
+        else if (hasPublicGetter && propertyInfo.PropertyType == typeof(string))
         {
-            if(propertyInfo.PropertyType == typeof(string))
+            if (hasSetter)
+            {
+                section.AddInfoDynamic(
+                    () => (string)propertyInfo.GetValue(optionsObject)!
+                );
+            }
+            else
             {
                 section.AddInfo(
                     (string)propertyInfo.GetValue(optionsObject)!
                 );
             }
-            return;
         }
     }
 }

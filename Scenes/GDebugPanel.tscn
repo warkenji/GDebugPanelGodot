@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://os30dycrhvs0"]
+[gd_scene load_steps=17 format=3 uid="uid://os30dycrhvs0"]
 
 [ext_resource type="Script" path="res://addons/GDebugPanelGodot/Scripts/Views/DebugPanelView.cs" id="1_3o12x"]
 [ext_resource type="FontFile" uid="uid://s3os5vbnjky3" path="res://addons/GDebugPanelGodot/Fonts/SpaceMono-Bold.ttf" id="1_3wdhi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://hy0wr7qtm7vx" path="res://addons/GDebugPanelGodot/Scenes/GDebugPanelSection.tscn" id="3_rmsxo"]
 [ext_resource type="PackedScene" uid="uid://ct2p5jkatd6p4" path="res://addons/GDebugPanelGodot/Scenes/ToggleDebugActionWidget.tscn" id="4_lwilv"]
 [ext_resource type="PackedScene" uid="uid://jjcvncm5s1yq" path="res://addons/GDebugPanelGodot/Scenes/StringDebugActionWidget.tscn" id="7_8lp1x"]
+[ext_resource type="PackedScene" uid="uid://dlm7gnw8tlsll" path="res://addons/GDebugPanelGodot/Scenes/ColorDebugActionWidget.tscn" id="7_iov0m"]
 [ext_resource type="PackedScene" uid="uid://b2wgwoerjooqf" path="res://addons/GDebugPanelGodot/Scenes/IntDebugActionWidget.tscn" id="7_vbj6r"]
 [ext_resource type="PackedScene" uid="uid://chrq3yyve2gwu" path="res://addons/GDebugPanelGodot/Scenes/FloatDebugActionWidget.tscn" id="8_ubasg"]
 [ext_resource type="PackedScene" uid="uid://bvqepn62gdah" path="res://addons/GDebugPanelGodot/Scenes/EnumDebugActionWidget.tscn" id="9_cehxr"]
@@ -42,6 +43,7 @@ InfoDebugActionWidget = ExtResource("3_es4am")
 DynamicInfoDebugActionWidget = ExtResource("3_c1kvk")
 ButtonDebugActionWidget = ExtResource("3_r5431")
 ToggleDebugActionWidget = ExtResource("4_lwilv")
+ColorDebugActionWidget = ExtResource("7_iov0m")
 StringDebugActionWidget = ExtResource("7_8lp1x")
 IntDebugActionWidget = ExtResource("7_vbj6r")
 FloatDebugActionWidget = ExtResource("8_ubasg")

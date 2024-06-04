@@ -1,6 +1,7 @@
 using System;
 using GDebugPanelGodot.DebugActions.Actions;
 using GDebugPanelGodot.DebugActions.Containers;
+using Godot;
 
 namespace GDebugPanelGodot.Extensions;
 
@@ -61,6 +62,22 @@ public static class DebugActionsSectionExtensions
     public static IDebugAction AddToggle(this IDebugActionsSection section, string name, Action<bool> setAction, Func<bool> getAction)
     {
         IDebugAction debugAction = new ToggleDebugAction(name, setAction, getAction);
+        section.Add(debugAction);
+        return debugAction;
+    }
+    
+    /// <summary>
+    /// Adds a color debug action with the provided name, and actions
+    /// for setting and getting the color value.
+    /// </summary>
+    /// <param name="section">The debug actions section to add the color action to.</param>
+    /// <param name="name">The name of the color.</param>
+    /// <param name="setAction">The action to set the color value.</param>
+    /// <param name="getAction">The function to get the current color value.</param>
+    /// <returns>The added color debug action.</returns>
+    public static IDebugAction AddColor(this IDebugActionsSection section, string name, Action<Color> setAction, Func<Color> getAction)
+    {
+        IDebugAction debugAction = new ColorDebugAction(name, setAction, getAction);
         section.Add(debugAction);
         return debugAction;
     }

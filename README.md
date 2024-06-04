@@ -125,6 +125,7 @@ public sealed class ExampleOptionsObject
     public bool ToggleExample { get; set; }
     public string DynamicInfoExample { get; set; } = "Dynamic Info";
     public string InfoExample => "Info";
+    public Color ColorExample { get; set; }
     public string StringExample { get; set; }
     public int IntExample { get; set; }
     public float FloatExample { get; set; }
@@ -163,7 +164,12 @@ This is the most part of this assets, the debug options (or widgets). Once you h
     bool someBool = false;
     section.AddToggle("Toggle name", val => someBool = val, () => someBool);
     ```
-- String: a string selector with a name. Requests a setter and a getter for the value.
+- Color: a color selector with a name. Requests a setter and a getter for the value.
+    ```csharp
+    string someColor = Colors.White;
+    section.AddColor("Color name", val => someColor = val, () => someColor);
+    ```
+- String: a string editor with a name. Requests a setter and a getter for the value.
     ```csharp
     string someString = "String value";
     section.AddString("String name", val => someString = val, () => someString);
